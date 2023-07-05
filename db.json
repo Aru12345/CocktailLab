@@ -1,0 +1,46 @@
+{
+    "cocktails": [
+      { "id": 1, 
+      "name": "Moscow Mule",
+       "img":"https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2019-12-How-to-Moscow-Mule%2FHT-Moscow-Mule_049",
+       "ingredients": [{"quatity":1.5,"description":"fluid ounces vodka"},{"quatity":0.5,"description":"fluid ounce lime juice"},{"quatity":2,"description":"ice cubes"},{"quatity":0.5,"description":"cup giner beer"},{"quatity":1,"description":"lime wedge"}],
+       "directions":"Pour vodka and lime juice into a mug; add ice cubes and ginger beer. Stir to combine.Drop a lime wedge into the mug for garnish.",
+       "nutrition":[{"calories":153,"carbs":[{"quantity":15,"description":"g"}]}]
+      },
+      { "id": 2, 
+      "name": "French 75",
+       "img":"https://www.liquor.com/thmb/BU4rXPbO0Qu5uwRkguTD88ISLN8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/french-75-720x720-primary-17fc1ce34c0a49e2ad60eb4a5705c6a2.jpg",
+       "ingredients": [{"quatity":1,"description":"ounce giner"},{"quatity":0.5,"description":" ounce lime juice"},{"quatity":0.5,"description":"simple syrup"},{"quatity":3,"description":"champagne"},{"quatity":1,"description":"lemon twist"}],
+       "directions":"Add the gin, lemon juice and simple syrup to a shaker with ice and shake until well-chilled.Strain into a Champagne flute.Top with the Champagne.Garnish with a lemon twist",
+       "nutrition":[{"calories":150,"carbs":[{"quantity":1,"description":"g"}]}]
+      },
+      { "id": 3, 
+      "name": "Brandy Milk Punch",
+       "img":"https://www.liquor.com/thmb/d-vh_vsBL_K7awqiIXCBDIbx5-w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/timmy-brandymilkpunch-720x720-primary-86bc7065a09949aaad89d9da95793c79.jpg",
+       "ingredients": [{"quatity":1,"description":"cup brandy"},{"quatity":3,"description":"cups milk"},{"quatity":3,"description":"tablespoons powdered sugar"},{"quatity":1,"description":"teaspoon vanilla extract"},{"quatity":0.5,"description":"g grated Nutmeg"}],
+       "directions":"Add the brandy, milk, powdered sugar and vanilla extract to a blender filled with ice and blend for 20 seconds.Taste, and add more sugar if desired.Double-strain the mixture into four tall glasses filled with crushed ice.Garnish with freshly grated nutmeg.",
+       "nutrition":[{"calories":170,"carbs":[{"quantity":7,"description":"g"}]}]
+      },
+      { "id": 4, 
+      "name": "Pisco Sour",
+       "img":"https://www.liquor.com/thmb/KYGy9ew2q16Otfj37mneK678gQA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2019__02__08143927__pisco-sour-720x720-recipe-9c46d52151e5445fa90bcf0394493060.jpg",
+       "ingredients": [{"quatity":2,"description":"ounces pisco"},{"quatity":1,"description":"ounce lime juice"},{"quatity":0.5,"description":"ounce simple syrup"},{"quatity":1,"description":"egg white"}],
+       "directions":"Add pisco, lime juice, simple syrup and egg white into a shaker and dry-shake (without ice) vigorously.Add ice and shake again until well-chilled.Strain into a chilled Nick & Nora glass. (Alternatively, you can strain it into a rocks glass over fresh ice.",
+       "nutrition":[{"calories":150,"carbs":[{"quantity":12,"description":"g"}]}]
+      },
+      { "id": 5, 
+      "name": "Lemon-and-Lavender Gin Fizz",
+       "img":"https://www.foodandwine.com/thmb/1sPKu_AeUX4eoP0960IVzpM5eJ0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Lemon-and-Lavender-Gin-Fizz-FT-recipe0619-43fb481d48c4407eb6c49897acecfab1.jpg",
+       "ingredients": [{"quatity":3,"description":"tablespoons citrusy-herbal gin"},{"quatity":1,"description":" fresh lemon juice"},{"quatity":1,"description":"tablespoon simple syrup"},{"quatity":1,"description":"dash Scrappy’s Lavender Bitters"},{"quatity":2,"description":"tablespoons club soda"},{"quatity":2,"description":"dashes Peychaud’s bitters"}],
+       "directions":"Combine gin, lemon juice, simple syrup, and lavender bitters in a Boston cocktail shaker. Fill shaker with ice cubes. Cover and shake vigorously until well chilled. Strain into a cognac snifter glass filled with ice cubes. Top with club soda and Peychaud’s bitters. Garnish with lemon wheels, juniper berries, and rose petals.",
+       "nutrition":[{"calories":220,"carbs":[{"quantity":30,"description":"g"}]}]
+      },
+      { "id": 7, 
+      "name": "Aperol Spritz",
+       "img":"https://loseweightbyeating.com/ezoimgfmt/b2148548.smushcdn.com/2148548/wp-content/uploads/2021/06/AdobeStock_188192813-500x500.jpeg?lossy=1&strip=1&webp=1&ezimgfmt=ng:webp/ngcb3",
+       "ingredients": [{"quatity":3,"description":"ounces Aperol"},{"quatity":3,"description":" ounces dry Prosecco "},{"quatity":4,"description":"ounces club soda"}],
+       "directions":"Add ice to a wine glass until it’s nearly full.Pour in the aperol, then add in the Prosecco, and club soda.Finally garnish with an orange slice, and if you like, a sprig of rosemary.Serve immediately.",
+       "nutrition":[{"calories":120,"carbs":[{"quantity":12.2,"description":"g"}]}]
+      }
+    ]
+  }
