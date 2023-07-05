@@ -41,6 +41,13 @@
        "ingredients": [{"quatity":3,"description":"ounces Aperol"},{"quatity":3,"description":" ounces dry Prosecco "},{"quatity":4,"description":"ounces club soda"}],
        "directions":"Add ice to a wine glass until it’s nearly full.Pour in the aperol, then add in the Prosecco, and club soda.Finally garnish with an orange slice, and if you like, a sprig of rosemary.Serve immediately.",
        "nutrition":[{"calories":120,"carbs":[{"quantity":12.2,"description":"g"}]}]
+      },
+      { "id": 8, 
+      "name": "Bloody Mary",
+       "img":"https://www.liquor.com/thmb/RxorioP44yaFV0qvE5PBtAqQVXc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/bloody-mary-720x720-primary-28cf1aaa79d0424d951901fcc0a42e91.jpg",
+       "ingredients": [{"quatity":0.1,"description":"g celery salt"},{"quatity":1,"description":" lemon wedge"},{"quatity":1,"description":"lime wedge"},{"quatity":2,"description":"ounces vodka"},{"quatity":2,"description":"teaspoons prepared horseradish"},{"quatity":2,"description":"dashes Tabasco sauce"},{"quatity":1,"description":"pinch ground black pepper"},{"quatity":1,"description":"pinch smoked paprika"}],
+       "directions":"Pour some celery salt onto a small plate.Rub the juicy side of the lemon or lime wedge along the lip of a pint glass.Roll the outer edge of the glass in celery salt until fully coated, then fill the glass with ice and set aside.Squeeze the lemon and lime wedges into a shaker and drop them in.Add the vodka, tomato juice, horseradish, Tabasco, Worcestershire, black pepper, paprika, plus a pinch of celery salt along with ice and shake gently.Strain into the prepared glass.Garnish with parsley sprig, 2 speared green olives, a lime wedge and a celery stalk (optional).",
+       "nutrition":[{"calories":123,"carbs":[{"quantity":4.9,"description":"g"}]}]
       }
     ]
   }
