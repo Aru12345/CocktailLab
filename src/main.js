@@ -1,14 +1,29 @@
 "use strict";
 const container = document.getElementById("cocktailList");
+const search = document.querySelector("#search");
+
+let recipes = [];
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  fetch("http://localhost:3000/cocktails")
+    .then((r) => r.json())
+    .then((data) => {
+      recipes = data;
+      data.forEach((cocktail) => {
+        renderCocktail(cocktail);
+      });
+    });
+});
 
 function renderCocktail(cocktail) {
   const div = document.createElement("div");
   div.id = `cocktailCard-${cocktail.id}`;
   div.className = "cocktail-card";
 
-  const header = document.createElement("h1");
-  header.textContent = ` ${cocktail.name}`;
-  console.log(header);
+  const header = (document.createElement(
+    "h1"
+  ).textContent = ` ${cocktail.name}`);
+
   const cocktailImg = document.createElement("img");
   cocktailImg.src = cocktail.img;
   cocktailImg.alt = `${cocktail.name} image`;
@@ -39,12 +54,24 @@ function renderCocktail(cocktail) {
   container.appendChild(div);
 }
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  fetch("http://localhost:3000/cocktails")
-    .then((r) => r.json())
-    .then((data) => {
-      data.forEach((cocktail) => {
-        renderCocktail(cocktail);
-      });
-    });
+search.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredRecipes = recipes.filter((recipe) => {
+    return recipe.name.toLowerCase().startsWith(searchString);
+  });
+
+  displayFilteredRecipes(filteredRecipes);
 });
+function displayFilteredRecipes(filteredRecipes) {
+  container.innerHTML = ""; // Clear previous results
+
+  if (filteredRecipes.length === 0) {
+    container.innerHTML = "No results found.";
+    return;
+  }
+
+  filteredRecipes.forEach((recipe) => {
+    renderCocktail(recipe);
+  });
+}
