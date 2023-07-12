@@ -1,14 +1,16 @@
 "use strict";
 const container = document.getElementById("cocktailList");
 const search = document.querySelector("#search");
-
+const pagination_element = document.getElementById("pagination");
+let page = 0;
+// let itemsPerPage = 5;
 let recipes = [];
 
 document.addEventListener("DOMContentLoaded", (e) => {
   fetch("http://localhost:3000/cocktails")
     .then((r) => r.json())
     .then((data) => {
-      recipes = data;
+      recipes = data; //Assigning the fetched data to the recipe array
       data.forEach((cocktail) => {
         renderCocktail(cocktail);
       });
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 function renderCocktail(cocktail) {
   const div = document.createElement("div");
+
   div.id = `cocktailCard-${cocktail.id}`;
   div.className = "cocktail-card";
 
@@ -24,6 +27,28 @@ function renderCocktail(cocktail) {
     "h1"
   ).textContent = ` ${cocktail.name}`);
 
+  const cocktailImg = document.createElement("img");
+  cocktailImg.src = cocktail.img;
+  cocktailImg.alt = `${cocktail.name} image`;
+
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Save";
+
+  div.addEventListener("click", () => {
+    openModal(cocktail);
+    console.log(cocktail);
+  });
+
+  div.append(header, cocktailImg, saveBtn);
+  container.appendChild(div); //, ingredientsList, directions, nutritionList); //Acoording to the order
+}
+
+function openModal(cocktail) {
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+
+  const modalContent = document.createElement("div");
+  modalContent.classList.add("modal-content");
   const cocktailImg = document.createElement("img");
   cocktailImg.src = cocktail.img;
   cocktailImg.alt = `${cocktail.name} image`;
@@ -50,10 +75,27 @@ function renderCocktail(cocktail) {
   nutritionList.appendChild(caloriesLi);
   nutritionList.appendChild(carbsLi);
 
-  div.append(header, cocktailImg, ingredientsList, directions, nutritionList); //Acoording to the order
-  container.appendChild(div);
-}
+  modalContent.append(cocktailImg, ingredientsList, directions, nutritionList);
+  modal.appendChild(modalContent);
 
+  // Append the modal to the document body
+  document.body.appendChild(modal);
+
+  // Add event listener to close the modal
+  modal.addEventListener("click", (event) => {
+    console.log(event);
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
+
+  //Closing the modal with escape key
+  modal.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      modal.remove();
+    }
+  });
+}
 search.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
 
