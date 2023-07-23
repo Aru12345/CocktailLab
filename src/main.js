@@ -55,11 +55,14 @@ function openModal(cocktail) {
   addition.addEventListener("click", increaseValues);
 
   function increaseValues() {
-    cocktail.servings++; // Increment the value of cocktail.servings
+    const originalServings = cocktail.servings; //Storing the original number
+    cocktail.servings++; // Incrementing the value of cocktail.servings
     servings.textContent = `Number of Servings: ${cocktail.servings}`; // Update the text content
 
+    const servingsRatio = cocktail.servings / originalServings;
     cocktail.ingredients.forEach((ingredient) => {
-      ingredient.quantity++;
+      ingredient.quantity =
+        Math.round(ingredient.quantity * servingsRatio * 100) / 100; // Calculated the new quantity by doubling the current quantity
     });
 
     ingredientsList.innerHTML = ""; // Clear the existing list
