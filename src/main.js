@@ -52,7 +52,11 @@ function openModal(cocktail) {
   const addition = document.createElement("button");
   addition.innerHTML = "+";
 
+  const subtraction = document.createElement("button");
+  subtraction.innerHTML = "-";
+
   addition.addEventListener("click", increaseValues);
+  subtraction.addEventListener("click", decreaseValues);
 
   function increaseValues() {
     const originalServings = cocktail.servings; //Storing the original number
@@ -73,6 +77,27 @@ function openModal(cocktail) {
     });
   }
 
+  function decreaseValues() {
+    const originalServings = cocktail.servings;
+    if (originalServings > 1) {
+      cocktail.servings--;
+      servings.textContent = `Number of Servings: ${cocktail.servings}`;
+
+      const servingsRatio = cocktail.servings / originalServings;
+      cocktail.ingredients.forEach((ingredient) => {
+        ingredient.quantity =
+          Math.round(ingredient.quantity * servingsRatio * 100) / 100;
+      });
+
+      ingredientsList.innerHTML = "";
+      cocktail.ingredients.forEach((ingredient) => {
+        const li = document.createElement("li");
+        li.textContent = `${ingredient.quantity} ${ingredient.description}`;
+        ingredientsList.appendChild(li);
+      });
+    }
+  }
+
   const cocktailImg = document.createElement("img");
   cocktailImg.src = cocktail.img;
 
@@ -87,6 +112,7 @@ function openModal(cocktail) {
   directions.textContent = cocktail.directions;
 
   modalContent.append(
+    subtraction,
     addition,
     servings,
     cocktailImg,
