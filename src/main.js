@@ -29,14 +29,11 @@ function renderCocktail(cocktail) {
   cocktailImg.src = cocktail.img;
   cocktailImg.alt = `${cocktail.name} image`;
 
-  const saveBtn = document.createElement("button");
-  saveBtn.textContent = "Save";
-
   div.addEventListener("click", () => {
     openModal(cocktail);
   });
 
-  div.append(header, cocktailImg, saveBtn);
+  div.append(header, cocktailImg);
   container.appendChild(div); //Acoording to the order
 }
 
@@ -111,13 +108,43 @@ function openModal(cocktail) {
   const directions = document.createElement("h3");
   directions.textContent = cocktail.directions;
 
+  let isFav = false;
+  const favButton = document.createElement("button");
+  favButton.textContent = "Save";
+
+  const existingFavs = JSON.parse(localStorage.getItem("favorites")) || [];
+  const recipeID = `cocktailCard-${cocktail.id}`;
+  if (existingFavs.includes(recipeID)) {
+    isFav = true;
+    favButton.textContent = "Saved";
+  }
+
+  function toggleFavorite() {
+    isFav = !isFav;
+    favButton.textContent = isFav ? "Saved" : "Save";
+    console.log("Toggle isFav:", isFav);
+    console.log("Existing Favorites before update:", existingFavs);
+
+    if (isFav) {
+      existingFavs.push(recipeID);
+    } else {
+      const index = existingFavs.indexOf(recipeID);
+      if (index !== -1) {
+        existingFavs.splice(index, 1);
+      }
+    }
+    localStorage.setItem("favorites", JSON.stringify(existingFavs));
+  }
+  favButton.addEventListener("click", toggleFavorite);
+
   modalContent.append(
     subtraction,
     addition,
     servings,
     cocktailImg,
     ingredientsList,
-    directions
+    directions,
+    favButton
   );
   modal.appendChild(modalContent);
 
