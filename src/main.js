@@ -1,6 +1,7 @@
 "use strict";
 const container = document.getElementById("cocktailList");
 const search = document.querySelector("#search");
+const searchWrapper = document.querySelector(".search-wrapper");
 let recipes = [];
 const bookmark = document.querySelector(".bookmark");
 
@@ -194,32 +195,13 @@ function displayFilteredRecipes(filteredRecipes) {
 let displayedBookmarks = false;
 // const recipeID = `cocktailCard-${cocktail.id}`;
 
-// //Cheking if recipe Ids already exist in local storage
-// if (existingFavs.includes(recipeID)) {
-//   isFav = true;
-//   favButton.textContent = "Saved";
-// }
-// function toggleFavorite() {
-//   isFav = !isFav;
-//   favButton.textContent = isFav ? "Saved" : "Save";
-//   if (isFav) {
-//     existingFavs.push(recipeID);
-//   } else {
-//     const index = existingFavs.indexOf(recipeID);
-//     //if not fav remove
-//     if (index !== -1) {
-//       existingFavs.splice(index, 1);
-//     }
-//   }
-
-//   localStorage.setItem("favorites", JSON.stringify(existingFavs));
-// }
 function toggleDisplay() {
   displayedBookmarks = !displayedBookmarks;
   bookmark.textContent = displayedBookmarks ? "Recipes" : "My Bookmarks";
   container.innerHTML = "";
 
   if (displayedBookmarks) {
+    searchWrapper.style.display = "none";
     if (existingFavs.length == 0) {
       container.innerHTML = "No Bookmarks ";
     } else {
@@ -232,6 +214,7 @@ function toggleDisplay() {
       });
     }
   } else {
+    searchWrapper.style.display = "block";
     recipes.forEach((recipe) => {
       renderCocktail(recipe);
     });
