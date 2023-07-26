@@ -1,8 +1,8 @@
 "use strict";
 const container = document.getElementById("cocktailList");
 const search = document.querySelector("#search");
-let page = 0;
 let recipes = [];
+const bookmark = document.querySelector(".bookmark");
 
 document.addEventListener("DOMContentLoaded", (e) => {
   fetch("http://localhost:3000/cocktails")
@@ -36,6 +36,8 @@ function renderCocktail(cocktail) {
   div.append(header, cocktailImg);
   container.appendChild(div); //Acoording to the order
 }
+
+const existingFavs = JSON.parse(localStorage.getItem("favorites")) || [];
 
 function openModal(cocktail) {
   const modal = document.createElement("div");
@@ -108,31 +110,31 @@ function openModal(cocktail) {
   const directions = document.createElement("h3");
   directions.textContent = cocktail.directions;
 
-  let isFav = false;
   const favButton = document.createElement("button");
   favButton.textContent = "Save";
 
-  const existingFavs = JSON.parse(localStorage.getItem("favorites")) || [];
+  // to get it in the form of array json parse or a case where existing favs is null
+  let isFav = false;
   const recipeID = `cocktailCard-${cocktail.id}`;
+
+  //Cheking if recipe Ids already exist in local storage
   if (existingFavs.includes(recipeID)) {
     isFav = true;
     favButton.textContent = "Saved";
   }
-
   function toggleFavorite() {
     isFav = !isFav;
     favButton.textContent = isFav ? "Saved" : "Save";
-    console.log("Toggle isFav:", isFav);
-    console.log("Existing Favorites before update:", existingFavs);
-
     if (isFav) {
       existingFavs.push(recipeID);
     } else {
       const index = existingFavs.indexOf(recipeID);
+      //if not fav remove
       if (index !== -1) {
         existingFavs.splice(index, 1);
       }
     }
+
     localStorage.setItem("favorites", JSON.stringify(existingFavs));
   }
   favButton.addEventListener("click", toggleFavorite);
@@ -187,3 +189,52 @@ function displayFilteredRecipes(filteredRecipes) {
     renderCocktail(recipe);
   });
 }
+
+// to get it in the form of array json parse or a case where existing favs is null
+let displayedBookmarks = false;
+// const recipeID = `cocktailCard-${cocktail.id}`;
+
+// //Cheking if recipe Ids already exist in local storage
+// if (existingFavs.includes(recipeID)) {
+//   isFav = true;
+//   favButton.textContent = "Saved";
+// }
+// function toggleFavorite() {
+//   isFav = !isFav;
+//   favButton.textContent = isFav ? "Saved" : "Save";
+//   if (isFav) {
+//     existingFavs.push(recipeID);
+//   } else {
+//     const index = existingFavs.indexOf(recipeID);
+//     //if not fav remove
+//     if (index !== -1) {
+//       existingFavs.splice(index, 1);
+//     }
+//   }
+
+//   localStorage.setItem("favorites", JSON.stringify(existingFavs));
+// }
+function toggleDisplay() {
+  displayedBookmarks = !displayedBookmarks;
+  bookmark.textContent = displayedBookmarks ? "Recipes" : "My Bookmarks";
+  container.innerHTML = "";
+
+  if (displayedBookmarks) {
+    if (existingFavs.length == 0) {
+      container.innerHTML = "No Bookmarks ";
+    } else {
+      existingFavs.forEach((fav) => {
+        const recipeID = parseInt(fav.split("-")[1]);
+        const recipe = recipes.find((r) => r.id === recipeID);
+        if (recipe) {
+          renderCocktail(recipe);
+        }
+      });
+    }
+  } else {
+    recipes.forEach((recipe) => {
+      renderCocktail(recipe);
+    });
+  }
+}
+bookmark.addEventListener("click", toggleDisplay);
