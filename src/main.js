@@ -206,6 +206,7 @@ function toggleDisplay() {
       container.innerHTML = "No Bookmarks ";
     } else {
       existingFavs.forEach((fav) => {
+        //console.log(fav);
         const recipeID = parseInt(fav.split("-")[1]);
         const recipe = recipes.find((r) => r.id === recipeID);
         if (recipe) {
@@ -221,3 +222,11 @@ function toggleDisplay() {
   }
 }
 bookmark.addEventListener("click", toggleDisplay);
+
+const myText = new SplitType(".head1");
+gsap.to(".char", {
+  y: 0,
+  stagger: 0.05,
+  delay: 0.2,
+  duration: 0.1,
+});

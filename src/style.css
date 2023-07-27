@@ -15,7 +15,7 @@ html,
 
 body {
   margin: 0;
-  background-color: rgba(123, 237, 8, 0.897);
+  background-color: rgb(10, 10, 115);
 }
 
 h1 {
@@ -177,6 +177,24 @@ img {
   margin-bottom: 20px;
 }
 
-.favourites {
-  background-color: #5959c5;
+.heading {
+  background-color: gold;
+  padding: 1%;
+  padding-top: 2%;
+  font-size: 90%;
+  padding-left: 2%;
+}
+h1 {
+  margin-top: 0;
+  color: rgb(10, 10, 115);
+  font-size: 250%;
+  font-weight: bold;
+}
+.content1 {
+  background-color: rgb(10, 10, 115);
+}
+
+.char {
+  transform: translateY(40px);
+  transition: transform 0.5s;
 }

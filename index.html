@@ -7,24 +7,26 @@
 </head>
 <body>
   <main class="main">
-    <h1>CocktailLab 🍹</h1>
-    <div class="search-wrapper">
-      <label for="search">Search</label>
-      <input type="search" id="search">
-    
+    <div class="heading">
+      <h1 class="head1"> CocktailLab 🍹</h1>
     </div>
-    <div class="fav">
-      <button class="bookmark">Bookmarks</button>
+   
+    <div class="content1">
+      <div class="search-wrapper">
+        <label for="search">Search</label>
+        <input type="search" id="search">
+      </div>
+      <div class="fav">
+        <button class="bookmark">Bookmarks</button>
+      </div>
+      <div  id="cocktailList">
+      </div>
 
     </div>
     
-    <div  id="cocktailList">
-      
-      
-     </div>
-      
-    
   </main>
-  <script src="src/main.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script  src="src/main.js"></script>
 </body>
 </html>
