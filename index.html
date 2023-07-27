@@ -4,6 +4,8 @@
   <title>A JavaScript project</title>
   <link rel="stylesheet" href="src/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
   <main class="main">
@@ -12,12 +14,16 @@
     </div>
    
     <div class="content1">
-      <div class="search-wrapper">
-        <label for="search">Search</label>
-        <input type="search" id="search">
-      </div>
+     
       <div class="fav">
         <button class="bookmark">Bookmarks</button>
+      </div>
+      <div class="search-wrapper">
+        <label for="search"> </label>
+        <input type="search" id="search" placeholder="search...">
+        <a href="#">
+        <i class="fas fa-search"></i> <!-- A solid user icon -->
+      </a>
       </div>
       <div  id="cocktailList">
       </div>
@@ -25,6 +31,8 @@
     </div>
     
   </main>
+
+
   <script src="https://unpkg.com/split-type"></script>
   <script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script  src="src/main.js"></script>

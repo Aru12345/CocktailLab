@@ -195,6 +195,72 @@ h1 {
 }
 
 .char {
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition: transform 0.5s;
+}
+.fav {
+  width: 40%;
+  display: inline-block;
+  margin: 2%;
+  margin-bottom: 2%;
+}
+.bookmark {
+  width: 156px;
+  height: 48px;
+  background-color: gold;
+  padding: 1%;
+  padding-bottom: 0.1%;
+  border: none;
+  margin: 1%;
+
+  color: rgb(10, 10, 115);
+  font-weight: bold;
+  box-shadow: inset 0 0 0 0 rgb(245, 223, 21);
+  transition: ease-out 0.6s;
+  outline: none;
+}
+
+.bookmark:hover {
+  box-shadow: inset 300px 0 0 0 rgb(244, 228, 139);
+  color: rgb(11, 11, 206);
+  cursor: pointer;
+}
+
+.search-wrapper {
+  visibility: visible;
+  display: inline-flex;
+  color: gold;
+  font-size: 155%;
+  font-weight: bold;
+  border: 0px solid;
+  padding: 0.5%;
+
+  cursor: pointer;
+  background-color: gold;
+  border-radius: 20px;
+  /* box-shadow: 0 10px 25px rgba(238, 212, 17, 0.962); */
+}
+
+.search-wrapper input {
+  width: 0;
+  outline: none;
+  border: none;
+  transition: 0.8s;
+  background: transparent;
+}
+.search-wrapper:hover input {
+  width: 250px;
+
+  cursor: pointer;
+  margin-left: 1%; /* Set an absolute height value for the search bar */
+}
+.fas {
+  color: rgb(10, 10, 115);
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }

@@ -201,7 +201,7 @@ function toggleDisplay() {
   container.innerHTML = "";
 
   if (displayedBookmarks) {
-    searchWrapper.style.display = "none";
+    searchWrapper.style.visibility = "hidden";
     if (existingFavs.length == 0) {
       container.innerHTML = "No Bookmarks ";
     } else {
@@ -215,7 +215,7 @@ function toggleDisplay() {
       });
     }
   } else {
-    searchWrapper.style.display = "block";
+    searchWrapper.style.visibility = "visible";
     recipes.forEach((recipe) => {
       renderCocktail(recipe);
     });
