@@ -197,7 +197,7 @@ let displayedBookmarks = false;
 
 function toggleDisplay() {
   displayedBookmarks = !displayedBookmarks;
-  bookmark.textContent = displayedBookmarks ? "Recipes" : "My Bookmarks";
+  bookmark.textContent = displayedBookmarks ? "Back" : "My Bookmarks";
   container.innerHTML = "";
 
   if (displayedBookmarks) {

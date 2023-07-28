@@ -199,7 +199,7 @@ h1 {
   transition: transform 0.5s;
 }
 .fav {
-  width: 40%;
+  width: 38%;
   display: inline-block;
   margin: 2%;
   margin-bottom: 2%;
@@ -221,7 +221,7 @@ h1 {
 }
 
 .bookmark:hover {
-  box-shadow: inset 300px 0 0 0 rgb(244, 228, 139);
+  box-shadow: inset 300px 0 0 0 rgb(247, 240, 198);
   color: rgb(11, 11, 206);
   cursor: pointer;
 }
@@ -263,4 +263,37 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
+}
+
+#cocktailList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cardContainer {
+  width: 100%;
+}
+
+.cocktail-card {
+  background-color: gold;
+  width: 30%;
+  margin: 1%;
+  margin-bottom: 2%;
+  height: 160%;
+  box-sizing: border-box;
+  padding: 1%;
+  color: rgb(10, 10, 115);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cocktail-card img {
+  width: 230px;
+  height: 200px;
+
+  /* height: 200px; */
 }
