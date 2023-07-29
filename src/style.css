@@ -160,10 +160,11 @@ img {
 }
 
 .modal-content {
-  background-color: #05e391;
+  background-color: gold;
   padding: 20px;
   border-radius: 5px;
   max-width: 500px;
+  color: navy;
 }
 
 .modal-content img {
@@ -175,6 +176,7 @@ img {
 .modal-content ul {
   margin-top: 10px;
   margin-bottom: 20px;
+  font-family: cursive;
 }
 
 .heading {
@@ -271,6 +273,8 @@ input[type="search"]::-webkit-search-results-decoration {
   justify-content: flex-start;
   max-width: 900px;
   margin: 0 auto;
+  color: aliceblue;
+  font-weight: bold;
 }
 .cardContainer {
   width: 100%;
@@ -296,4 +300,52 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 200px;
 
   /* height: 200px; */
+}
+
+.Ibuttons {
+  margin: 1%;
+  border: none;
+  width: 10%;
+  height: 10%;
+  background-color: navy;
+  color: gold;
+}
+.Ibuttons:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.modal p {
+  font-weight: bold;
+}
+
+.modal img {
+  float: right;
+  width: 25%;
+}
+
+.ingredientsList {
+  font-weight: 300;
+}
+
+.modal h3 {
+  font-weight: 600;
+  font-size: medium;
+  font-style: normal;
+}
+
+.favButton {
+  cursor: pointer;
+  background-color: navy;
+  border: none;
+  color: gold;
+  width: 14%;
+  height: 12%;
+  margin: 1%;
+}
+
+.favButton:hover {
+  font-style: normal;
+  cursor: pointer;
+  background-color: blue;
 }

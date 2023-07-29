@@ -51,10 +51,11 @@ function openModal(cocktail) {
   servings.textContent = `Number of Servings: ${cocktail.servings}`;
   const addition = document.createElement("button");
   addition.innerHTML = "+";
+  addition.classList.add("Ibuttons");
 
   const subtraction = document.createElement("button");
   subtraction.innerHTML = "-";
-
+  subtraction.classList.add("Ibuttons");
   addition.addEventListener("click", increaseValues);
   subtraction.addEventListener("click", decreaseValues);
 
@@ -102,6 +103,7 @@ function openModal(cocktail) {
   cocktailImg.src = cocktail.img;
 
   const ingredientsList = document.createElement("ul");
+  ingredientsList.classList.add("ingredientsList");
   cocktail.ingredients.forEach((ingredient) => {
     const li = document.createElement("li");
     li.textContent = `${ingredient.quantity} ${ingredient.description}`;
@@ -112,6 +114,7 @@ function openModal(cocktail) {
   directions.textContent = cocktail.directions;
 
   const favButton = document.createElement("button");
+  favButton.classList.add("favButton");
   favButton.textContent = "Save";
 
   // to get it in the form of array json parse or a case where existing favs is null
