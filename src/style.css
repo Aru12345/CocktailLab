@@ -273,8 +273,8 @@ input[type="search"]::-webkit-search-results-decoration {
   justify-content: flex-start;
   max-width: 900px;
   margin: 0 auto;
-  color: aliceblue;
   font-weight: bold;
+  color: gold;
 }
 .cardContainer {
   width: 100%;
@@ -293,6 +293,13 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cocktail-card img {
+  width: 230px;
+  height: 200px;
+
+  /* height: 200px; */
 }
 
 .cocktail-card img {
@@ -348,4 +355,120 @@ input[type="search"]::-webkit-search-results-decoration {
   font-style: normal;
   cursor: pointer;
   background-color: blue;
+}
+
+@media screen and (max-width: 900px) {
+  #cocktailList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cocktail-card {
+    background-color: gold;
+    width: 43%;
+    margin: 2%;
+    margin-bottom: 2%;
+    height: 160%;
+    box-sizing: border-box;
+    padding: 2%;
+    color: rgb(10, 10, 115);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cocktail-card img {
+    width: 260px;
+    height: 200px;
+
+    /* height: 200px; */
+  }
+}
+@media screen and (max-width: 608px) {
+  #cocktailList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cocktail-card {
+    background-color: gold;
+    width: 43%;
+    margin: 2%;
+    margin-bottom: 2%;
+    height: 160%;
+    box-sizing: border-box;
+    padding: 2%;
+    color: rgb(10, 10, 115);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cocktail-card img {
+    width: 200px;
+    height: 200px;
+
+    /* height: 200px; */
+  }
+  .modal-content {
+    background-color: gold;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    color: navy;
+  }
+  .favButton {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  #cocktailList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-left: 25%;
+  }
+  .cocktail-card {
+    background-color: gold;
+    width: 69%;
+    margin: 2%;
+    margin-bottom: 2%;
+    height: 160%;
+    box-sizing: border-box;
+    padding: 2%;
+    color: rgb(10, 10, 115);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cocktail-card img {
+    width: 250px;
+    height: 200px;
+
+    /* height: 200px; */
+  }
+  .modal-content {
+    background-color: gold;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    color: navy;
+  }
+  .favButton {
+    width: 15%;
+  }
+  .heading {
+    width: 100%;
+  }
 }

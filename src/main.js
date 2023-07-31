@@ -50,15 +50,24 @@ function openModal(cocktail) {
   const servings = document.createElement("p");
   servings.textContent = `Number of Servings: ${cocktail.servings}`;
   const addition = document.createElement("button");
-  addition.innerHTML = "+";
   addition.classList.add("Ibuttons");
+  addition.innerHTML = "+";
 
   const subtraction = document.createElement("button");
-  subtraction.innerHTML = "-";
   subtraction.classList.add("Ibuttons");
+  subtraction.innerHTML = "-";
+
   addition.addEventListener("click", increaseValues);
   subtraction.addEventListener("click", decreaseValues);
 
+  function calculated() {
+    ingredientsList.innerHTML = ""; // Clear the existing list
+    cocktail.ingredients.forEach((ingredient) => {
+      const li = document.createElement("li");
+      li.textContent = `${ingredient.quantity} ${ingredient.description}`;
+      ingredientsList.appendChild(li);
+    });
+  }
   function increaseValues() {
     const originalServings = cocktail.servings; //Storing the original number
     cocktail.servings++; // Incrementing the value of cocktail.servings
@@ -69,13 +78,7 @@ function openModal(cocktail) {
       ingredient.quantity =
         Math.round(ingredient.quantity * servingsRatio * 100) / 100; // Calculated the new quantity by doubling the current quantity
     });
-
-    ingredientsList.innerHTML = ""; // Clear the existing list
-    cocktail.ingredients.forEach((ingredient) => {
-      const li = document.createElement("li");
-      li.textContent = `${ingredient.quantity} ${ingredient.description}`;
-      ingredientsList.appendChild(li);
-    });
+    calculated();
   }
 
   function decreaseValues() {
@@ -90,12 +93,7 @@ function openModal(cocktail) {
           Math.round(ingredient.quantity * servingsRatio * 100) / 100;
       });
 
-      ingredientsList.innerHTML = "";
-      cocktail.ingredients.forEach((ingredient) => {
-        const li = document.createElement("li");
-        li.textContent = `${ingredient.quantity} ${ingredient.description}`;
-        ingredientsList.appendChild(li);
-      });
+      calculated();
     }
   }
 
@@ -117,7 +115,6 @@ function openModal(cocktail) {
   favButton.classList.add("favButton");
   favButton.textContent = "Save";
 
-  // to get it in the form of array json parse or a case where existing favs is null
   let isFav = false;
   const recipeID = `cocktailCard-${cocktail.id}`;
 
@@ -126,6 +123,7 @@ function openModal(cocktail) {
     isFav = true;
     favButton.textContent = "Saved";
   }
+
   function toggleFavorite() {
     isFav = !isFav;
     favButton.textContent = isFav ? "Saved" : "Save";
@@ -153,11 +151,9 @@ function openModal(cocktail) {
     favButton
   );
   modal.appendChild(modalContent);
-
   // Append the modal to the document body
   document.body.appendChild(modal);
 
-  // Add event listener to close the modal
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.remove();
@@ -193,11 +189,8 @@ function displayFilteredRecipes(filteredRecipes) {
     renderCocktail(recipe);
   });
 }
-
-// to get it in the form of array json parse or a case where existing favs is null
 let displayedBookmarks = false;
 // const recipeID = `cocktailCard-${cocktail.id}`;
-
 function toggleDisplay() {
   displayedBookmarks = !displayedBookmarks;
   bookmark.textContent = displayedBookmarks ? "Back" : "My Bookmarks";
@@ -209,7 +202,7 @@ function toggleDisplay() {
       container.innerHTML = "No Bookmarks ";
     } else {
       existingFavs.forEach((fav) => {
-        //console.log(fav);
+        console.log(existingFavs);
         const recipeID = parseInt(fav.split("-")[1]);
         const recipe = recipes.find((r) => r.id === recipeID);
         if (recipe) {
